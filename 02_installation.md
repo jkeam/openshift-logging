@@ -1,14 +1,14 @@
 # Installation
 
-1.  `oc apply -f ./02_01_installation.yaml`
+1.  `oc apply -f ./02_installation/02_01_installation.yaml`
 
 2.  `oc get csv --all-namespaces` - Verify `elasticsearch-operator.5.0.0-202007012112.p0` as `Succeeded` in every namespace
 
-3.  `oc apply -f ./02_02_installation.yaml`
+3.  `oc apply -f ./02_installation/02_02_installation.yaml`
 
 4.  `oc get csv -n openshift-logging` - Verify `clusterlogging.5.0.0-202007012112.p0` as `Succeeded`
 
-5.  `oc apply -f ./02_03_installation.yaml` - To customize the logging instance, update before applying
+5.  `oc apply -f ./02_installation/02_03_installation.yaml` - To customize the logging instance, update before applying
 
 6.  `oc get pods -n openshift-logging` - Verify installation, you will see something like the following
 
@@ -30,13 +30,13 @@
 7.  Optionally, you can configure OCP Events to be collected by Fluentd, but keep in mind this adds additional load to Fluentd and can impact the number of other log messages that can be processed.  [Instructions to set this up are here](https://docs.openshift.com/container-platform/4.7/logging/cluster-logging-eventrouter.html#cluster-logging-eventrouter).
 
     ```shell
-    oc apply -f ./02_05_installation.yaml
+    oc apply -f ./02_installation/02_05_installation.yaml
     ```
 
 8.  Optionally, you can configure OCP audit logs to be collected by Fluentd.  Keep in mind that the internally OCP Elasticsearch is not encrypted so neither will this log info, which is why this is disabled by default.  [Instructions to set this up are here](https://docs.openshift.com/container-platform/4.7/logging/config/cluster-logging-log-store.html#cluster-logging-elasticsearch-audit_cluster-logging-store).
 
     ```shell
-    oc apply -f ./02_04_installation.yaml
+    oc apply -f ./02_installation/02_04_installation.yaml
     ```
 
     Or for an existing one `oc edit clusterlogforwarder -n openshift-logging`.  Make sure `pipelines` has `audit`.

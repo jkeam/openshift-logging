@@ -2,7 +2,7 @@
 
 After running the installation, wait a few minutes for Fluentd to collect logs and send those over to Elasticsearch.  Elasticsearch will automatically index this information automatically.  To view this information we will be setting up Kibana.
 
-1.  Open Kibana by opening this [URL](https://kibana-openshift-logging.apps.<cluster-name>/)
+1.  Open Kibana by opening this url, replacing with your own cluster-name: `https://kibana-openshift-logging.apps.<cluster-name>`
 
 2.  For each standard user, after logging in, create an index pattern named `app` and use the `@timestamp` time field to view the app container logs
 
