@@ -1,0 +1,23 @@
+---
+# Operator Group
+apiVersion: operators.coreos.com/v1
+kind: OperatorGroup
+metadata:
+  name: cluster-logging
+  namespace: openshift-logging
+spec:
+  targetNamespaces:
+  - openshift-logging
+
+---
+# OCP Logging Operator Subscription
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  name: cluster-logging
+  namespace: openshift-logging
+spec:
+  channel: "5.0"
+  name: cluster-logging
+  source: redhat-operators
+  sourceNamespace: openshift-marketplace
