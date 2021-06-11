@@ -5,7 +5,7 @@ apiVersion: v1
 metadata:
   name: eventrouter-template
   annotations:
-    description: "A pod forwarding kubernetes events to OpenShift Logging stack."
+    description: "A pod forwarding kubernetes events to cluster logging stack."
     tags: "events,EFK,logging,cluster-logging"
 objects:
   - kind: ServiceAccount
@@ -85,7 +85,7 @@ objects:
 parameters:
   - name: IMAGE
     displayName: Image
-    value: "registry.redhat.io/openshift-logging/eventrouter-rhel8:latest"
+    value: "registry.redhat.io/openshift4/ose-logging-eventrouter:latest"
   - name: CPU
     displayName: CPU
     value: "100m"
