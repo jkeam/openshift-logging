@@ -2,11 +2,11 @@
 
 1.  `oc apply -f ./02_installation/02_01_installation.yaml`
 
-2.  `oc get csv --all-namespaces` - Verify `elasticsearch-operator.5.0.0-202007012112.p0` as `Succeeded` in every namespace
+2.  `oc get csv --all-namespaces` - Verify `4.6.0-202106010807.p0.git.c07c7ab` as `Succeeded` in every namespace
 
 3.  `oc apply -f ./02_installation/02_02_installation.yaml`
 
-4.  `oc get csv -n openshift-logging` - Verify `clusterlogging.5.0.0-202007012112.p0` as `Succeeded`
+4.  `oc get csv -n openshift-logging` - Verify `clusterlogging.4.6.0-202106010807.p0.git.e091c13` as `Succeeded`
 
 5.  `oc apply -f ./02_installation/02_03_installation.yaml` - To customize the logging instance, update before applying
 
